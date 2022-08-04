@@ -1,0 +1,73 @@
+
+1. Выбрать все данные из таблицы customers
+SELECT * FROM castomers
+
+2. Выбрать все записи из таблицы customers, но только колонки "имя" и "город"
+SELECT contact_name, city FROM customers
+
+3. Выбрать все записи из таблицы orders, но взять две колонки: 
+идентификатор заказа и колонку, 
+значение в которой мы рассчитываем 
+как разницу между датой отгрузки и датой формирования заказа.
+SELECT order_id, (shipped_date - order_date) FROM orders
+
+4.Выбрать все заказы из стран France, Spain, Austria 
+(Select * from orders where ship_country IN ('France', 'Austria', 'Spain')
+
+5. Выбрать все заказы, отсортировать по required_date (по убыванию)
+и отсортировать по дате отгрузки (по возрастанию) SELECT * from orders 
+order by required_date desc, shipped_date asc
+
+6. Выбрать минимальную цену товара среди тех продуктов, которых более 30 штук 
+(SELECT min (unit_price) from products where unit price > 30)
+
+7.Выбрать максимальное количество единиц товара среди тех продуктов
+цена которых более 30у.е (SELECT max (unit_price) from products 
+where units_in_stock > 30)
+
+8. Найти среднее значение дней уходяцих на доставку с даты формирования заказа в США 
+(Select AVG (shipped_date - order_date) From orders where ship_country = 'USA'
+
+9. Найти сумму, на которую имеется товаров (количество * цену)
+причем таких которые мы планируем продавать в будущем (см. discontinued)
+SELECT SUM (units_in_stock * unit_price) FROM products where discontinued <> 0 
+
+
+10. выбрать все записи товара в которых наименование страны отгрузки начинается с "U"
+SELECT ship_country from orders
+where ship_country like 'U%'
+
+11. Посчитать кол-во заказчиков регион которых не известен
+SELECT count(ship_region) as count from orders
+
+12. Подсчитать количество suppliers в каждой из стран и 
+отсортировать результаты группировки по убыванию кол-ва 
+
+SELECT country, count(supplier_id) FROM suppliers
+group by country 
+order by count desc
+
+13. Выбрать все уникальные страны заказчиков и поставщиков и отсортировать
+страны по возрастанию
+
+SELECT distinct country, company_name from suppliers
+order by country asc
+
+14. Выбрать записи работников (колонки имя, фамилия, тел, регион) в которых
+регион не известен
+SELECT first_name, last_name, home_phone, region  from employees
+where region IS not null
+
+15.Узнать есть ли работники которые не работают ни на одном заказе
+SELECT last_name, order_id  from employees, orders
+where order_id IS null
+
+16. Узнать есть ли Customers которые не сделали ни одного заказа
+SELECT * from customers, orders
+where order_id IS null
+
+17. Узнать дату первого заказа из Бразилии.
+SELECT ship_country, order_date from orders
+where ship_country IN ('Brazil')
+order by order_date asc
+

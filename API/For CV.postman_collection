@@ -1,0 +1,1158 @@
+{
+	"info": {
+		"_postman_id": "f10d7c4f-ac50-4342-9c64-7540bdd971cd",
+		"name": "For Kseniya",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20523187"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].name).to.eql(\"Ona.Rutherford25\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{$randomUserName}}",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{$randomPassword}}",
+							"description": "200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_users}}/tasks/rest/doregister",
+					"host": [
+						"{{url_users}}"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "/////",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$guid}}mailinator.com",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{$randomPassword}}",
+									"description": "200",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_users}}/tasks/rest/doregister",
+							"host": [
+								"{{url_users}}"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"doregister"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register Get Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{$randomUserName}}",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com",
+							"description": "200",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "{{$randomPassword}}",
+							"description": "200",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks//rest//getuser?name=Vern41&email=0762d4f5-1cc3-45ae-8e90-2362ad081ccf@mailinator.com",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"",
+						"tasks",
+						"",
+						"rest",
+						"",
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Vern41"
+						},
+						{
+							"key": "email",
+							"value": "0762d4f5-1cc3-45ae-8e90-2362ad081ccf@mailinator.com"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "/////",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$guid}}mailinator.com",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{$randomPassword}}",
+									"description": "200",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_users}}/tasks/rest/doregister",
+							"host": [
+								"{{url_users}}"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"doregister"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register Del.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{$randomUserName}}",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com",
+							"description": "200",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "{{$randomPassword}}",
+							"description": "200",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks//rest//deleteuser?email=0762d4f5-1cc3-45ae-8e90-2362ad081ccf@mailinator.com",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"",
+						"tasks",
+						"",
+						"rest",
+						"",
+						"deleteuser"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "0762d4f5-1cc3-45ae-8e90-2362ad081ccf@mailinator.com"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "/////",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$guid}}mailinator.com",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{$randomPassword}}",
+									"description": "200",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_users}}/tasks/rest/doregister",
+							"host": [
+								"{{url_users}}"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"doregister"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.get(\"variable_key\");\r",
+							"pm.globals.get(\"variable_key\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "SELECTро1.ЪЁ",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{$randomPassword}}",
+							"description": "200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_users}}/tasks/rest/doregister",
+					"host": [
+						"{{url_users}}"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "/////",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$guid}}mailinator.com",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{$randomPassword}}",
+									"description": "200",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_users}}/tasks/rest/doregister",
+							"host": [
+								"{{url_users}}"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"doregister"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register Get Copy2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{$randomUserName}}",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com",
+							"description": "200",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "{{$randomPassword}}",
+							"description": "200",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks//rest//getuser?name=SELECTро1.ЪЁ&email=743f24eb-ad2d-4809-b825-3611d43d3aed@mailinator.com",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"",
+						"tasks",
+						"",
+						"rest",
+						"",
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "SELECTро1.ЪЁ"
+						},
+						{
+							"key": "email",
+							"value": "743f24eb-ad2d-4809-b825-3611d43d3aed@mailinator.com"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "/////",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$guid}}mailinator.com",
+									"description": "200",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{$randomPassword}}",
+									"description": "200",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_users}}/tasks/rest/doregister",
+							"host": [
+								"{{url_users}}"
+							],
+							"path": [
+								"tasks",
+								"rest",
+								"doregister"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register Test password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{$randomNamePrefix}}",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "!@#$%",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_users}}/tasks/rest/doregister",
+					"host": [
+						"{{url_users}}"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Test password Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{$randomNamePrefix}}",
+							"description": "200",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com",
+							"description": "200",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "!@#$%",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks//rest//getuser?name=Mrs.&email=e2769803-7311-49e3-a693-08411281d266@mailinator.com",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"",
+						"tasks",
+						"",
+						"rest",
+						"",
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Mrs."
+						},
+						{
+							"key": "email",
+							"value": "e2769803-7311-49e3-a693-08411281d266@mailinator.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{$randomUserName}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "{{$randomPassword}}",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_users}}/tasks/rest/createuser?email={{$guid}}@mailinator.com&name=Vladimir&tasks[0]=12&companies[0]=34&hobby=sport&adres=minsk&name1=Vladim&surname1=Das&fathername1=Vic&cat=Sim&dog=Dog&parrot=par&cavy=cav&hamster=ham&squirrel=as&phone=356876&inn=123456789012&birthday=10.04.1991&date_start=02.06.2021",
+					"host": [
+						"{{url_users}}"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createuser"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{$guid}}@mailinator.com"
+						},
+						{
+							"key": "name",
+							"value": "Vladimir"
+						},
+						{
+							"key": "tasks[0]",
+							"value": "12"
+						},
+						{
+							"key": "companies[0]",
+							"value": "34"
+						},
+						{
+							"key": "hobby",
+							"value": "sport"
+						},
+						{
+							"key": "adres",
+							"value": "minsk"
+						},
+						{
+							"key": "name1",
+							"value": "Vladim"
+						},
+						{
+							"key": "surname1",
+							"value": "Das"
+						},
+						{
+							"key": "fathername1",
+							"value": "Vic"
+						},
+						{
+							"key": "cat",
+							"value": "Sim"
+						},
+						{
+							"key": "dog",
+							"value": "Dog"
+						},
+						{
+							"key": "parrot",
+							"value": "par"
+						},
+						{
+							"key": "cavy",
+							"value": "cav"
+						},
+						{
+							"key": "hamster",
+							"value": "ham"
+						},
+						{
+							"key": "squirrel",
+							"value": "as"
+						},
+						{
+							"key": "phone",
+							"value": "356876"
+						},
+						{
+							"key": "inn",
+							"value": "123456789012"
+						},
+						{
+							"key": "birthday",
+							"value": "10.04.1991"
+						},
+						{
+							"key": "date_start",
+							"value": "02.06.2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://users.bugred.ru/tasks//rest//getuser?name=Vladimir&hobby=sport&email=87191244-0812-4d31-a173-ef172a939aac@mailinator.com",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"",
+						"tasks",
+						"",
+						"rest",
+						"",
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Vladimir"
+						},
+						{
+							"key": "hobby",
+							"value": "sport"
+						},
+						{
+							"key": "email",
+							"value": "87191244-0812-4d31-a173-ef172a939aac@mailinator.com"
+						},
+						{
+							"key": "name1",
+							"value": "Vladim",
+							"disabled": true
+						},
+						{
+							"key": "surname1",
+							"value": "Das",
+							"disabled": true
+						},
+						{
+							"key": "fathername1",
+							"value": "Vic",
+							"disabled": true
+						},
+						{
+							"key": "cat",
+							"value": "Sim",
+							"disabled": true
+						},
+						{
+							"key": "dog",
+							"value": "Dog",
+							"disabled": true
+						},
+						{
+							"key": "parrot",
+							"value": "par",
+							"disabled": true
+						},
+						{
+							"key": "cavy",
+							"value": "cav",
+							"disabled": true
+						},
+						{
+							"key": "hamster",
+							"value": "ham",
+							"disabled": true
+						},
+						{
+							"key": "squirrel",
+							"value": "as",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "356876",
+							"disabled": true
+						},
+						{
+							"key": "inn",
+							"value": "123456789012",
+							"disabled": true
+						},
+						{
+							"key": "birthday",
+							"value": "10.04.1991",
+							"disabled": true
+						},
+						{
+							"key": "date_start",
+							"value": "02.06.2021",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creat Avatar for User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "87191244-0812-4d31-a173-ef172a939aac@mailinator.com",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/hlamh/OneDrive/Рабочий стол/photo_2022-05-09_21-20-28.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_users}}/tasks/rest/addavatar",
+					"host": [
+						"{{url_users}}"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"addavatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Del. Avatar for User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "c7feaba3-9508-46e0-9ec3-d181eb591fb1@mailinator.com",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks//rest//deleteavatar?email=87191244-0812-4d31-a173-ef172a939aac@mailinator.com",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"",
+						"tasks",
+						"",
+						"rest",
+						"",
+						"deleteavatar"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "87191244-0812-4d31-a173-ef172a939aac@mailinator.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creat Avatar for User Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "0762d4f5-1cc3-45ae-8e90-2362ad081ccf@mailinator.com",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"description": "error file size",
+							"type": "file",
+							"src": "/C:/Users/hlamh/OneDrive/Рабочий стол/HMW API.docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url_users}}/tasks/rest/addavatar",
+					"host": [
+						"{{url_users}}"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"addavatar"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Vern41",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "0762d4f5-1cc3-45ae-8e90-2362ad081ccf@mailinator.com",
+							"disabled": true
+						},
+						{
+							"key": "avatar",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create company",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"company_name\": \"Соискатели1\",\r\n  \"company_type\": \"ООО\",\r\n  \"company_users\": [\"6540fb10-2bae-4df6-ab08-7bb5e8b94684@mailinator.com\", \"f966df88-1e04-4a45-9d6d-97b58755e839@mailinator.com\"],\r\n  \"email_owner\": \"aa+1@mail.com\"\r\n} "
+				},
+				"url": {
+					"raw": "{{url_users}}/tasks/rest/createcompany",
+					"host": [
+						"{{url_users}}"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createcompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create company GET",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"company_name\": \"Соискатели\",\r\n  \"company_type\": \"ООО\",\r\n  \"company_users\": [\"c57686b9-e5ff-4aa6-8ee0-78fecdc4d5d8@mailinator.com\", \"3e6d33d5-85eb-4acb-a479-67897b8cf17e@mailinator.com\"],\r\n  \"email_owner\": \"aa+1@mail.com\"\r\n} "
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks//rest//getcompany?name=соискатели&id_company=72",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"",
+						"tasks",
+						"",
+						"rest",
+						"",
+						"getcompany"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "соискатели"
+						},
+						{
+							"key": "id_company",
+							"value": "72"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "save_data",
+			"value": ""
+		},
+		{
+			"key": "savedData",
+			"value": ""
+		}
+	]
+}
